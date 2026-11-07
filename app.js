@@ -189,8 +189,9 @@
     const schools = CITY.citySchools[city] || [];
     const total = (CITY.univCities.find((c) => c.city === city) || {}).count || 0;
 
+    const homeCount = (CITY.cities.find((c) => c.city === city) || {}).count || 0;
     panel.classList.add("is-active");
-    panel.innerHTML = `<h5>${city}<em>${total} 位</em></h5>` +
+    panel.innerHTML = `<h5>${city}<em>就读 ${total} 位 · 家乡 ${homeCount} 位</em></h5>` +
       (schools.length
         ? `<ul>${schools.map((s) => `<li><span>${escapeHtml(s.school)}</span><b>${s.count}</b></li>`).join("")}</ul>`
         : `<ul><li class="empty">暂无院校信息</li></ul>`);
@@ -359,6 +360,13 @@
         el.innerHTML = `${c.city}<b>${c.count}</b>`;
         chipsBox.appendChild(el);
       });
+    }
+
+    const noteEl = $("#metricNote");
+    if (noteEl) {
+      noteEl.innerHTML = isUniv
+        ? '口径 ｜ 按 <b>就读院校所在城市</b> 统计，与「家乡」不是同一组数字'
+        : '口径 ｜ 按 <b>家庭所在地</b> 统计，与「就学城市」不是同一组数字';
     }
 
     $("#cityBars").hidden = isUniv;
