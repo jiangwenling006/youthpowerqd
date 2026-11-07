@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026—2027 青砺公益 · 青岛工作站概览</title>
+<meta name="description" content="2026—2027 青砺公益青岛工作站成员概览：集青年之力，筑向上之梯。" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/brand/logo-mark.png" alt="" />
+      <span>青砺公益<em>青岛工作站</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#cities">城市分布</a>
+      <a href="#members">成员</a>
+      <a href="#stories">故事</a>
+    </nav>
+    <div class="nav-meta">2026—2027</div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="glow"></span>
+      <span class="grid-lines"></span>
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="kicker">QINGDAO STATION <span class="dot">·</span> 2026—2027</p>
+        <h1>青砺公益<br /><span class="thin">青岛工作站</span></h1>
+        <p class="lede">集青年之力，筑向上之梯</p>
+        <p class="desc">
+          <span id="heroTotal">35</span> 位青年，从青岛的海风、威海的校园、泰安的泰山脚下一路聚拢，
+          也带着贵州、山西、甘肃、新疆的风尘。
+          我们一起做中学生领导力，一起把想法落地成真实的公益现场。
+        </p>
+        <div class="hero-cta">
+          <a class="btn solid" href="#cities">从城市开始 <span>↓</span></a>
+          <a class="btn line" href="#members">认识伙伴</a>
+        </div>
+      </div>
+
+      <aside class="hero-side reveal" aria-label="关键数字">
+        <div class="stat">
+          <b class="num" data-count="35">0</b>
+          <span class="stat-label">位成员</span>
+        </div>
+        <div class="stat">
+          <b class="num" data-count="5">0</b>
+          <span class="stat-label">个部门 / 团队</span>
+        </div>
+        <div class="stat">
+          <b class="num" data-count="18">0</b>
+          <span class="stat-label">座城市</span>
+        </div>
+        <div class="stat small">
+          <b class="num" data-count="17">0</b>
+          <span class="stat-label">位已上传自我介绍</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>YOUTH POWER QINGDAO</span><i>·</i><span>集青年之力 筑向上之梯</span><i>·</i><span>2026—2027</span><i>·</i>
+        <span>中学生领导力</span><i>·</i><span>公益实践</span><i>·</i><span>青岛 · 威海 · 泰安 · 济南 · 潍坊</span><i>·</i>
+        <span>YOUTH POWER QINGDAO</span><i>·</i><span>集青年之力 筑向上之梯</span><i>·</i><span>2026—2027</span><i>·</i>
+        <span>中学生领导力</span><i>·</i><span>公益实践</span><i>·</i><span>青岛 · 威海 · 泰安 · 济南 · 潍坊</span><i>·</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CITIES ===================== -->
+  <section class="section cities" id="cities">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-index"><span>01</span> WHERE WE ARE</div>
+        <div class="sec-title-row">
+          <h2>城市分布</h2>
+          <div class="seg" role="tablist" aria-label="切换统计口径">
+            <button class="seg-btn is-on" data-mode="home" role="tab" aria-selected="true">家乡</button>
+            <button class="seg-btn" data-mode="univ" role="tab" aria-selected="false">就学城市</button>
+          </div>
+        </div>
+        <p class="sec-sub" id="citySub">
+          35 位成员里，17 位来自山东的 7 座城市，11 位从省外赶来，7 位还在填写中。
+        </p>
+      </header>
+
+      <div class="city-board">
+        <div class="city-side reveal">
+          <p class="city-big"><b class="num" id="cityMain">0</b></p>
+          <p class="city-big-label" id="cityMainLabel">位成员来自山东</p>
+          <p class="city-note" id="cityNote"></p>
+          <div class="chips outside" id="outsideChips"></div>
+
+          <div class="schools" id="schoolList" hidden>
+            <p class="schools-head"><span>院校分布</span><em id="schoolCount"></em></p>
+            <ul class="school-rows" id="schoolRows"></ul>
+          </div>
+        </div>
+
+        <div class="city-visual reveal">
+          <div class="bars" id="cityBars"><!-- js --></div>
+
+          <div class="map-wrap" id="cityMap" hidden>
+            <div class="map-canvas" id="mapCanvas"></div>
+            <div class="map-panel" id="mapPanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MEMBERS ===================== -->
+  <section class="section members" id="members">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-index"><span>02</span> THE TEAM</div>
+        <div class="sec-title-row">
+          <h2>成员</h2>
+          <p class="result-line"><b id="shown">35</b> / <span id="totalCount">35</span> 位</p>
+        </div>
+        <p class="sec-sub">
+          17 位伙伴带来了照片与自我介绍，可以点开看看他们写了什么；其余的「待补」位，留给正在路上的故事。
+        </p>
+      </header>
+
+      <div class="filters reveal">
+        <div class="chips dept-chips" id="deptFilter"></div>
+        <div class="filters-right">
+          <div class="seg small" id="typeFilter">
+            <button class="seg-btn is-on" data-type="all">全部</button>
+            <button class="seg-btn" data-type="留任">留任</button>
+            <button class="seg-btn" data-type="新成员">新成员</button>
+          </div>
+          <label class="search">
+            <input id="search" type="search" placeholder="搜索 姓名 / 城市 / 院校" />
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"><!-- js --></div>
+
+      <p class="empty" id="empty" hidden>没有找到匹配的伙伴，换个关键词试试。</p>
+    </div>
+  </section>
+
+  <!-- ===================== STORIES ===================== -->
+  <section class="stories" id="stories">
+    <div class="wrap">
+      <p class="kicker light reveal">03 — STORIES</p>
+      <h2 class="big-line reveal">集青年之力，<br />筑向上之梯</h2>
+      <p class="story-sub reveal">
+        我们相信青年可以彼此照亮。往下是两篇公众号长文，记录了展示会、青年营与那些
+        「用生命影响生命」的瞬间。
+      </p>
+
+      <div class="story-cards">
+        <a class="story-card reveal" target="_blank" rel="noopener"
+           href="https://mp.weixin.qq.com/s/TfdzJIWHSEJF2Qt05-8ong">
+          <div class="story-media">
+            <img src="assets/brand/logo-qingdao.png" alt="青砺公益青岛" />
+          </div>
+          <div class="story-body">
+            <span class="mono">STORY 01</span>
+            <h3>关于我们的故事 · 其一</h3>
+            <span class="more">点击查看更多故事 ↗</span>
+          </div>
+        </a>
+
+        <a class="story-card reveal" target="_blank" rel="noopener"
+           href="https://mp.weixin.qq.com/s/_dF7DsYC6Lr5Fm3u5vO1wA">
+          <div class="story-media">
+            <img src="assets/brand/logo-youth.png" alt="青砺公益" />
+          </div>
+          <div class="story-body">
+            <span class="mono">STORY 02</span>
+            <h3>关于我们的故事 · 其二</h3>
+            <span class="more">点击查看更多故事 ↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="foot-left">
+      <img src="assets/brand/logo-mark.png" alt="" />
+      <p>青砺公益 · 青岛工作站<br /><span>YOUTH POWER QINGDAO</span></p>
+    </div>
+    <div class="foot-right">
+      <p>2026—2027 年度 · 成员概览</p>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <button class="modal-close" id="modalClose" aria-label="关闭">✕</button>
+    <div class="modal-photo" id="modalPhoto"></div>
+    <div class="modal-body">
+      <div class="modal-tags" id="modalTags"></div>
+      <h3 id="modalName">—</h3>
+      <p class="modal-meta" id="modalMeta"></p>
+      <div class="modal-keywords" id="modalKeywords"></div>
+      <div class="modal-intro" id="modalIntro"></div>
+    </div>
+  </div>
+</div>
+
+<script src="map-data.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
