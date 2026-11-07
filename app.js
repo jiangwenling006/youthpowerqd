@@ -13,11 +13,12 @@
     "项目部": "项目部",
     "运营部": "运营部",
     "公共关系部": "公共关系部",
+    "其他": "其他",
     "公共关系部（外联方向）": "公关 · 外联",
     "公共关系部（宣传方向）": "公关 · 宣传",
     "未确定部门": "未确定部门"
   };
-  const DEPT_ORDER = ["项目部", "运营部", "公共关系部", "未确定部门"];
+  const DEPT_ORDER = ["项目部", "运营部", "公共关系部", "其他", "未确定部门"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
