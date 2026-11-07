@@ -309,7 +309,8 @@
         ? `${MEMBERS.length} 位成员里，${schoolKnown} 位已填就读院校（共 ${CITY.schools.length} 所），` +
           `其中 ${total} 位在山东 ${list.length} 座城市就读` +
           (outUniv ? `、${outUniv} 位在省外` : "") + `；只统计到学校，不具体到人。`
-        : `${MEMBERS.length} 位成员里，${total} 位来自山东的 ${list.length} 座城市，${CITY.outside} 位从省外赶来，${unknown} 位还在填写中。`;
+        : `${MEMBERS.length} 位成员里，${total} 位来自山东的 ${list.length} 座城市，${CITY.outside} 位从省外赶来` +
+          (unknown ? `，${unknown} 位还在填写中。` : "。");
     }
 
     const top = list.slice(0, 2);
