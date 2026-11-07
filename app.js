@@ -13,10 +13,11 @@
     "项目部": "项目部",
     "运营部": "运营部",
     "公共关系部（外联方向）": "公关 · 外联",
-    "公共关系部（宣传方向）": "公关 · 宣传"
+    "公共关系部（宣传方向）": "公关 · 宣传",
+    "未确定部门": "未确定部门"
   };
   const DEPT_ORDER = ["执行长团队", "项目部", "运营部",
-                      "公共关系部（外联方向）", "公共关系部（宣传方向）"];
+                      "公共关系部（外联方向）", "公共关系部（宣传方向）", "未确定部门"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -77,8 +78,9 @@
      --------------------------------------------------------- */
   /* 统计全部按成员数据现算：手改 data.js 后无需再改代码 */
   function countCities(members) {
-    const sd = {}, out = {}, usd = {}, univByCity = {}, schools = {};
+    const sd = {}, out = {}, usd = {}, uout = {}, univByCity = {}, schools = {};
     let unknown = 0, uUnknown = 0;
+    const SD_CITIES = new Set(((window.SD_MAP || {}).cities || []).map((c) => c.name));
 
     members.forEach((m) => {
       const city = (m.city || "").trim();
@@ -89,10 +91,12 @@
       const u = (m.univCityN || "").trim();
       const school = (m.school || "").trim();
       if (!u) uUnknown += 1;
-      else {
+      else if (SD_CITIES.has(u)) {
         usd[u] = (usd[u] || 0) + 1;
         const bucket = univByCity[u] || (univByCity[u] = { schools: {} });
         if (school) bucket.schools[school] = (bucket.schools[school] || 0) + 1;
+      } else {
+        uout[u] = (uout[u] || 0) + 1;
       }
       if (school) schools[school] = (schools[school] || 0) + 1;
     });
@@ -110,7 +114,8 @@
 
     return {
       cities: toList(sd), outsideCities: toList(out), unknown,
-      univCities: toList(usd), univUnknown: uUnknown, citySchools,
+      univCities: toList(usd), univOutside: toList(uout), univUnknown: uUnknown,
+      citySchools,
       schools: toSchoolList(schools),
       inShandong: sum(sd), outside: sum(out),
       cityTotal: Object.keys(sd).length + Object.keys(out).length
@@ -130,7 +135,7 @@
       list: () => CITY.univCities,
       total: () => CITY.univCities.reduce((s, c) => s + c.count, 0),
       unknown: () => CITY.univUnknown,
-      outside: () => [],
+      outside: () => CITY.univOutside,
       unknownWord: "位信息待补"
     }
   };
@@ -299,9 +304,11 @@
     const schoolKnown = CITY.schools.reduce((s, x) => s + x.count, 0);
     const subEl = $("#citySub");
     if (subEl) {
+      const outUniv = CITY.univOutside.reduce((s, c) => s + c.count, 0);
       subEl.textContent = isUniv
         ? `${MEMBERS.length} 位成员里，${schoolKnown} 位已填就读院校（共 ${CITY.schools.length} 所），` +
-          `其中 ${total} 位能对应到山东 ${list.length} 座城市；只统计到学校，不具体到人。`
+          `其中 ${total} 位在山东 ${list.length} 座城市就读` +
+          (outUniv ? `、${outUniv} 位在省外` : "") + `；只统计到学校，不具体到人。`
         : `${MEMBERS.length} 位成员里，${total} 位来自山东的 ${list.length} 座城市，${CITY.outside} 位从省外赶来，${unknown} 位还在填写中。`;
     }
 
@@ -326,10 +333,18 @@
     const chipsBox = $("#outsideChips");
     chipsBox.innerHTML = "";
     if (isUniv) {
-      const el = document.createElement("span");
-      el.className = "chip";
-      el.innerHTML = `院校待补<b>${MEMBERS.length - schoolKnown}</b>`;
-      chipsBox.appendChild(el);
+      CITY.univOutside.forEach((c) => {
+        const el2 = document.createElement("span");
+        el2.className = "chip";
+        el2.innerHTML = `省外 · ${c.city}<b>${c.count}</b>`;
+        chipsBox.appendChild(el2);
+      });
+      if (MEMBERS.length - schoolKnown > 0) {
+        const el = document.createElement("span");
+        el.className = "chip";
+        el.innerHTML = `院校待补<b>${MEMBERS.length - schoolKnown}</b>`;
+        chipsBox.appendChild(el);
+      }
       if (MEMBERS.length - schoolKnown !== unknown) {
         const el2 = document.createElement("span");
         el2.className = "chip";
