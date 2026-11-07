@@ -12,12 +12,12 @@
     "执行长团队": "执行长团队",
     "项目部": "项目部",
     "运营部": "运营部",
+    "公共关系部": "公共关系部",
     "公共关系部（外联方向）": "公关 · 外联",
     "公共关系部（宣传方向）": "公关 · 宣传",
     "未确定部门": "未确定部门"
   };
-  const DEPT_ORDER = ["执行长团队", "项目部", "运营部",
-                      "公共关系部（外联方向）", "公共关系部（宣传方向）", "未确定部门"];
+  const DEPT_ORDER = ["项目部", "运营部", "公共关系部", "未确定部门"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -472,7 +472,9 @@
   }
 
   function renderMembers() {
-    const list = MEMBERS.filter(memberMatches);
+    const list = MEMBERS.filter(memberMatches)
+      .slice()
+      .sort((a, b) => (a.photo ? 0 : 1) - (b.photo ? 0 : 1) || a.no - b.no);
     $("#grid").innerHTML = list.map(cardHTML).join("");
     $("#shown").textContent = list.length;
     $("#empty").hidden = list.length > 0;
