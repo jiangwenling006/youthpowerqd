@@ -13,12 +13,13 @@
     "项目部": "项目部",
     "运营部": "运营部",
     "公共关系部": "公共关系部",
+    "管理层": "管理层",
     "其他": "其他",
     "公共关系部（外联方向）": "公关 · 外联",
     "公共关系部（宣传方向）": "公关 · 宣传",
     "未确定部门": "未确定部门"
   };
-  const DEPT_ORDER = ["项目部", "运营部", "公共关系部", "其他", "未确定部门"];
+  const DEPT_ORDER = ["项目部", "运营部", "公共关系部", "管理层", "其他", "未确定部门"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -613,7 +614,8 @@
 
     // 所有总数都从数据现算：成员数 / 部门数 / 城市数 / 已上传介绍数
     const withIntro = MEMBERS.filter((m) => (m.intro || []).length > 0).length;
-    const deptCount = new Set(MEMBERS.map((m) => m.dept).filter(Boolean)).size;
+    const deptCount = new Set(MEMBERS.map((m) => m.dept)
+      .filter((d) => d && d !== "管理层" && d !== "其他" && d !== "未确定部门")).size;
     const totals = [MEMBERS.length, deptCount, CITY.cityTotal, withIntro];
 
     $$(".hero .stat").forEach((stat, i) => {

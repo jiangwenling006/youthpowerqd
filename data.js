@@ -1,4 +1,4 @@
-// 站点数据：由《2026-2027 青砺公益·青岛工作站 人员信息表》与成员自我介绍整理生成
+// 站点数据：由《2026-2027 青砺公益·青岛工作站 人员信息》与成员自我介绍整理生成
 // 不含手机号、邮箱、微信号等隐私字段；新增成员照此结构追加即可
 window.SITE_DATA = {
  "members": [
@@ -355,23 +355,6 @@ window.SITE_DATA = {
   },
   {
    "no": 14,
-   "name": "朱子航",
-   "type": "留任",
-   "dept": "运营部",
-   "role": "部员",
-   "city": "青岛",
-   "province": "山东",
-   "univCityN": "威海",
-   "school": "山东大学威海校区",
-   "major": "中国语言文学类",
-   "degree": "专/本科生",
-   "year": 2025,
-   "photo": "",
-   "keywords": [],
-   "intro": []
-  },
-  {
-   "no": 15,
    "name": "刘学丞",
    "type": "留任",
    "dept": "运营部",
@@ -388,7 +371,7 @@ window.SITE_DATA = {
    "intro": []
   },
   {
-   "no": 16,
+   "no": 15,
    "name": "郭澍云",
    "type": "留任",
    "dept": "公共关系部",
@@ -420,7 +403,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 17,
+   "no": 16,
    "name": "李雅歌",
    "type": "留任",
    "dept": "公共关系部",
@@ -437,7 +420,7 @@ window.SITE_DATA = {
    "intro": []
   },
   {
-   "no": 18,
+   "no": 17,
    "name": "刘凤仪",
    "type": "留任",
    "dept": "公共关系部",
@@ -463,7 +446,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 19,
+   "no": 18,
    "name": "郭梦然",
    "type": "留任",
    "dept": "公共关系部",
@@ -493,7 +476,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 20,
+   "no": 19,
    "name": "矫俊贤",
    "type": "留任",
    "dept": "公共关系部",
@@ -519,24 +502,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 21,
-   "name": "梁锦铭",
-   "type": "留任",
-   "dept": "公共关系部",
-   "role": "部员",
-   "city": "青岛",
-   "province": "山东",
-   "univCityN": "烟台",
-   "school": "烟台幼儿师范高等专科学校+聊城大学",
-   "major": "学前教育",
-   "degree": "专/本科生",
-   "year": 2025,
-   "photo": "",
-   "keywords": [],
-   "intro": []
-  },
-  {
-   "no": 22,
+   "no": 20,
    "name": "董庞昕",
    "type": "留任",
    "dept": "公共关系部",
@@ -553,10 +519,10 @@ window.SITE_DATA = {
    "intro": []
   },
   {
-   "no": 23,
+   "no": 21,
    "name": "胡家赫",
    "type": "留任",
-   "dept": "其他",
+   "dept": "管理层",
    "role": "执行长",
    "city": "青岛",
    "province": "山东",
@@ -581,10 +547,10 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 24,
+   "no": 22,
    "name": "蒋汶伶",
    "type": "留任",
-   "dept": "其他",
+   "dept": "管理层",
    "role": "站长",
    "city": "遵义",
    "province": "贵州",
@@ -610,7 +576,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 25,
+   "no": 23,
    "name": "任飞扬",
    "type": "新成员",
    "dept": "项目部",
@@ -639,7 +605,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 26,
+   "no": 24,
    "name": "刘宏弈",
    "type": "新成员",
    "dept": "项目部",
@@ -668,7 +634,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 27,
+   "no": 25,
    "name": "李涵",
    "type": "新成员",
    "dept": "项目部",
@@ -693,7 +659,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 28,
+   "no": 26,
    "name": "裴凯杰",
    "type": "新成员",
    "dept": "项目部",
@@ -722,24 +688,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 29,
-   "name": "张宇烯",
-   "type": "新成员",
-   "dept": "运营部",
-   "role": "部员",
-   "city": "成都",
-   "province": "四川",
-   "univCityN": "威海",
-   "school": "哈尔滨工业大学（威海）",
-   "major": "大数据管理与应用",
-   "degree": "专/本科生",
-   "year": 2024,
-   "photo": "",
-   "keywords": [],
-   "intro": []
-  },
-  {
-   "no": 30,
+   "no": 27,
    "name": "马文金",
    "type": "新成员",
    "dept": "运营部",
@@ -769,7 +718,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 31,
+   "no": 28,
    "name": "李熙冉",
    "type": "新成员",
    "dept": "公共关系部",
@@ -800,7 +749,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 32,
+   "no": 29,
    "name": "李晓芙",
    "type": "新成员",
    "dept": "公共关系部",
@@ -827,7 +776,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 33,
+   "no": 30,
    "name": "蒋瑜",
    "type": "新成员",
    "dept": "公共关系部",
@@ -856,7 +805,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 34,
+   "no": 31,
    "name": "窦玉环",
    "type": "新成员",
    "dept": "公共关系部",
@@ -883,7 +832,7 @@ window.SITE_DATA = {
    ]
   },
   {
-   "no": 35,
+   "no": 32,
    "name": "赵一鸣",
    "type": "新成员",
    "dept": "公共关系部",
